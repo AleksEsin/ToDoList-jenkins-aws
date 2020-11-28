@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20161212192954) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -24,9 +21,9 @@ ActiveRecord::Schema.define(version: 20161212192954) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "status",     default: false
+    t.boolean  "status",               default: false
     t.integer  "project_id"
-    t.bigint   "rating"
+    t.integer  "rating",     limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deadline"
@@ -45,8 +42,8 @@ ActiveRecord::Schema.define(version: 20161212192954) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

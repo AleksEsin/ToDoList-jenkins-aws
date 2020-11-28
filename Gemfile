@@ -7,7 +7,7 @@ gem 'slim-rails', '3.1.1'
 gem 'rails-controller-testing', '1.0.1'
 
 group :development do
-  gem 'sqlite3', '0.3.13'
+  gem 'sqlite3', '1.3.13'
 end
 
 group :development, :test do
