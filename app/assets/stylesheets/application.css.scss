@@ -1,0 +1,144 @@
+  
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap-datepicker
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html body { 
+  background: url(bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  a{
+    color: rgba(176,196,221, 0.8);
+    text-decoration: none!important; 
+  }
+} 
+
+.content{
+  margin: auto;
+}
+@media (max-width: 414px) {
+  .content {
+    width: 99vw;
+  }
+}
+@media (min-width: 414px) {
+  .content {
+    width: 98vw;
+  }
+}
+@media (min-width: 768px) {
+  .content {
+    width: 93vw;
+  }
+}
+@media (min-width: 960px) {
+  .content {
+    width: 800px;
+  }
+}
+
+  /* header - start */
+.glyphicon-log-out{
+  color: rgb(245, 0, 0);
+  text-shadow: 0 0 4px grey;
+  &:hover{
+    color: red;
+    text-shadow: 0 0 6px red;
+  }
+}
+ul.navbar-form.navbar-left{
+  color: grey;
+}
+  /* header - finish */
+
+  /* footer - start */
+footer.footer {
+	position: absolute; 
+  width: 80%;
+  left: 10%;
+ 	height: 25px;
+  color: #51504E; 
+
+  a{transition: 0.4s;
+    color: #1B96FF;
+    &:hover {
+      color: #000000;
+    }
+  }  
+  small { float: left; }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+  /* footer - finish */
+                                                      /* pages style */
+.stroked{text-decoration: line-through;}
+.input-group.add_tast_to_project{width: 97%;}
+.input-group.edit_project_name{width: 100%;}
+.inline{display: inline;}
+.select_deadline_field_input{ width: 108px; }
+
+.control, .control>a{
+  width: 15px;
+  height: 17px;
+  color: transparent;
+  .glyphicon:hover{
+    cursor:pointer;
+    color: rgba(122,156,199, 0.8);
+  } 
+}
+
+.control_left_side{
+  width: 15px;
+  height: 17px;
+  .glyphicon-plus-sign{
+    vertical-align: middle; 
+    color: green;
+  }
+  .glyphicon-hourglass{ /* clock */
+    padding-left: 3px;
+    color: rgba(255,255,255, 0.8);
+  }
+}
+
+img.ajax_loader{
+  visibility: hidden;
+  position: fixed;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  height: 35px;
+  width: 35px;
+  margin: -15px 0 0 -15px;
+}
+
+a#add_project{ /* button */
+  margin-left: calc(50% - 94px);
+  margin-bottom: 50px;
+ } 
+ .profile-img-card{
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+ }

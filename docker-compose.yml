@@ -1,0 +1,36 @@
+version: "3.8"
+
+volumes:
+#  api_db_1: {}
+ 
+services:
+#  api_db_1:
+#    image: postgres
+#    volumes:
+#      - ./tmp/api_db_1:/var/lib/postgresql/data
+#      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_PASSWORD: password
+
+  api_web_1:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+#    depends_on:
+#      - api_db_1
+
+  nginx:
+    image: nginx:stable-alpine
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    ports:
+      - "80:80"
+#    depends_on:
+#      - api_db_1
+#      - api_web_1
+
